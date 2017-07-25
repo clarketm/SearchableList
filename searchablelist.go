@@ -49,12 +49,12 @@ type SearchableList struct {
 	*list.List
 }
 
-// (l *SearchableList)
-
 // New () *list.List
 func New() *SearchableList {
 	return &SearchableList{new(list.List).Init()}
 }
+
+// (l *SearchableList)
 
 // ContainsElement (t *list.Element) bool
 func (l *SearchableList) ContainsElement(t *list.Element) bool {
