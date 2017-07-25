@@ -56,11 +56,11 @@ func New() *SearchableList {
 	return &SearchableList{new(list.List).Init()}
 }
 
-// ContainsElement (target *list.Element) bool
-func (l *SearchableList) ContainsElement(target *list.Element) bool {
+// ContainsElement (t *list.Element) bool
+func (l *SearchableList) ContainsElement(t *list.Element) bool {
 	if l.Len() > 0 {
 		for e := l.Front(); e != nil; e = e.Next() {
-			if e == target {
+			if e == t {
 				return true
 			}
 		}
@@ -68,17 +68,17 @@ func (l *SearchableList) ContainsElement(target *list.Element) bool {
 	return false
 }
 
-// Contains (target *list.Element) bool
+// Contains (t *list.Element) bool
 // alias -> ContainsElement
-func (l *SearchableList) Contains(target *list.Element) bool {
-	return l.ContainsElement(target)
+func (l *SearchableList) Contains(t *list.Element) bool {
+	return l.ContainsElement(t)
 }
 
-// ContainsValue (value interface{}) bool
-func (l *SearchableList) ContainsValue(value interface{}) bool {
+// ContainsValue (v interface{}) bool
+func (l *SearchableList) ContainsValue(v interface{}) bool {
 	if l.Len() > 0 {
 		for e := l.Front(); e != nil; e = e.Next() {
-			if e.Value == value {
+			if e.Value == v {
 				return true
 			}
 		}
@@ -86,11 +86,11 @@ func (l *SearchableList) ContainsValue(value interface{}) bool {
 	return false
 }
 
-// FindFirst (value interface{}) *list.Element
-func (l *SearchableList) FindFirst(value interface{}) *list.Element {
+// FindFirst (v interface{}) *list.Element
+func (l *SearchableList) FindFirst(v interface{}) *list.Element {
 	if l.Len() > 0 {
 		for e := l.Front(); e != nil; e = e.Next() {
-			if e.Value == value {
+			if e.Value == v {
 				return e
 			}
 		}
@@ -98,11 +98,11 @@ func (l *SearchableList) FindFirst(value interface{}) *list.Element {
 	return nil
 }
 
-// FindLast (value interface{}) *list.Element
-func (l *SearchableList) FindLast(value interface{}) *list.Element {
+// FindLast (v interface{}) *list.Element
+func (l *SearchableList) FindLast(v interface{}) *list.Element {
 	if l.Len() > 0 {
 		for e := l.Back(); e != nil; e = e.Prev() {
-			if e.Value == value {
+			if e.Value == v {
 				return e
 			}
 		}
@@ -110,12 +110,12 @@ func (l *SearchableList) FindLast(value interface{}) *list.Element {
 	return nil
 }
 
-// FindAll (value interface{}) []*list.Element
-func (l *SearchableList) FindAll(value interface{}) []*list.Element {
+// FindAll (v interface{}) []*list.Element
+func (l *SearchableList) FindAll(v interface{}) []*list.Element {
 	if l.Len() > 0 {
 		elList := []*list.Element{}
 		for e := l.Front(); e != nil; e = e.Next() {
-			if e.Value == value {
+			if e.Value == v {
 				elList = append(elList, e)
 			}
 		}
