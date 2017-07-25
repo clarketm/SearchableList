@@ -5,8 +5,8 @@ Use of this source code is governed by a Apache-2.0
 license that can be found in the LICENSE file.
 
 SEARCHABLE LIST
-	Package `searchablelist` implements the `list` doubly linked list and
-	extends it with search/find methods
+	Package `searchablelist` implements the `list` package doubly linked list
+	and extends it with search methods
 
     type SearchableList
         New () *SearchableList
