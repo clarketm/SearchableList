@@ -1,4 +1,4 @@
-# SearchableList
+# [SearchableList](https://godoc.org/github.com/clarketm/SearchableList)
 
 	Package `searchablelist` implements the `list` package doubly linked list
 	and extends it with search methods
